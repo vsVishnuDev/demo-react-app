@@ -10,6 +10,7 @@ jobs:
       - name: Run Comamnd
         run: echo "Hi There!"
   test1:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Run Comamnd
