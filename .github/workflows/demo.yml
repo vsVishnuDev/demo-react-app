@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Comamnd
-        run: echo "Good bye"
+        run: echo1 "Good bye"
