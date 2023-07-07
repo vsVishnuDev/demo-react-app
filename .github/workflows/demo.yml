@@ -9,3 +9,9 @@ jobs:
     steps:
       - name: Run Comamnd
         run: echo "Hi There!"
+jobs:
+  test1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Comamnd
+        run: echo "Good bye"
