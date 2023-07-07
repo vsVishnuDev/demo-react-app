@@ -1,0 +1,11 @@
+name: Deploying a web site
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing a message
+        run: echo "Hi there!"
