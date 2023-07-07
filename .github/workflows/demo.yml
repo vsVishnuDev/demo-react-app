@@ -19,7 +19,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     outputs:
-      script-file: ${{ steps.publish.outputs.script-file }}
+      test-pass-percentage: ${{ steps.test-output-publish.outputs.pass-percentage }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -27,9 +27,9 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-      - name: publish js file name
-        id: publish
-        run: echo 'script-file="some values"' >> $GITHUB_OUTPUT ';'
+      - name: Publish test pass percentage
+        id: test-output-publish
+        run: echo 'pass-percentage="86% passed, 14% Failed"' >> $GITHUB_OUTPUT ';'
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -48,4 +48,4 @@ jobs:
           pwd
           ls
       - name: output js filename
-        run: echo "${{needs.build.outputs.script-file}}"
+        run: echo "${{needs.build.outputs.test-pass-percentage}}"
