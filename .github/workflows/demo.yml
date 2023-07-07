@@ -9,8 +9,7 @@ jobs:
     steps:
       - name: Printing a message
         run: echo "Hi there!"
-jobs:
-  test:
+  test1:
     runs-on: ubuntu-latest
     steps:
       - name: Printing another message
