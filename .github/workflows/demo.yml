@@ -7,15 +7,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Printing a message
-        run: echo "Hi there!"
-      - name: Printing a message1
-        run: echo "Hi there!"
-      - name: Printing a message1
-        run: echo "Hi there!"
-  test1:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Printing another message
-        run: echo "Good bye!"
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm i
+      - name: Test code
+        run: npm run test
