@@ -7,11 +7,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Comamnd
-        run: echo "Hi There!"
-  test1:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Comamnd
-        run: echo1 "Good bye"
+      - name: Get code
+        uses: actions/checkout@v3
+#      - name: Cache dependencies
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.npm
+#          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: npm run test
