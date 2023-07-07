@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Printing a message
         run: echo "Hi there!"
+      - name: Printing a message1
+        run: echo "Hi there!"
+      - name: Printing a message1
+        run: echo "Hi there!"
   test1:
     needs: test
     runs-on: ubuntu-latest
